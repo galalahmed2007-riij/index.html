@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story ❤️</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #333;
+        }
+
+        .screen {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        .active {
+            display: flex;
+        }
+
+        .logo-btn {
+            font-size: 48px;
+            font-weight: bold;
+            color: #ff4b2b;
+            background: #fff;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 75, 43, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .heart {
+            font-size: 80px;
+            color: #ff4b2b;
+            display: none;
+            animation: pulse 1.2s infinite ease-in-out;
+            margin-top: 15px;
+        }
+
+        h2 {
+            color: #ff4b2b;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .dates-box {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 15px;
+            border-radius: 12px;
+            margin: 15px 0;
+            width: 100%;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 65, 108, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .btn-secondary {
+            background: #ccc;
+            box-shadow: none;
+            color: #333;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الشاشة 1 -->
+    <div class="screen active" id="screen1">
+        <div class="logo-btn" id="logoBtn" onclick="showHeart()">GR</div>
+        <div class="heart" id="heartIcon">❤️</div>
+        <button class="btn" id="startBtn" style="display:none; margin-top:20px;" onclick="goToScreen(2)">يلا كمل</button>
+    </div>
+
+    <!-- الشاشة 2: التواريخ -->
+    <div class="screen" id="screen2">
+        <h2>أجمل التواريخ</h2>
+        <div class="dates-box">
+            <p>🎂 10 / 10 / 2006</p>
+            <p>🎂 8 / 10 / 2007</p>
+            <p>✨ 3 / 1</p> <!-- التعديل الجديد -->
+        </div>
+        <div class="btn-container">
+            <button class="btn btn-secondary" onclick="goToScreen(1)">رجوع</button>
+            <button class="btn" onclick="goToScreen(3)">يلا كمل</button>
+        </div>
+    </div>
+
+    <!-- الشاشة 3: الساعة -->
+    <div class="screen" id="screen3">
+        <h2>أجمل ساعة في حياتي</h2>
+        <p style="font-size: 32px; font-weight: bold; color: #ff4b2b; margin: 20px 0;">3:55 AM</p>
+        <div class="btn-container">
+            <button class="btn btn-secondary" onclick="goToScreen(2)">رجوع</button>
+            <button class="btn" onclick="goToScreen(4)">يلا كمل</button>
+        </div>
+    </div>
+
+    <!-- الشاشة 4: كلمة بحبك -->
+    <div class="screen" id="screen4">
+        <h1 style="font-size: 42px; color: #ff4b2b; margin-bottom: 20px;">بحبك ❤️</h1>
+        <div class="btn-container">
+            <button class="btn btn-secondary" onclick="goToScreen(3)">رجوع</button>
+            <button class="btn" onclick="goToScreen(5)">يلا كمل</button>
+        </div>
+    </div>
+
+    <!-- الشاشة 5: الصور -->
+    <div class="screen" id="screen5">
+        <h2>ذكرياتنا 📸</h2>
+        <div class="gallery">
+            <!-- حط روابط صوركم هنا -->
+            <img src="https://via.placeholder.com/150" alt="صورة 1">
+            <img src="https://via.placeholder.com/150" alt="صورة 2">
+        </div>
+        <div class="btn-container">
+            <button class="btn btn-secondary" onclick="goToScreen(4)">رجوع</button>
+            <button class="btn" onclick="goToScreen(6)">يلا كمل</button>
+        </div>
+    </div>
+
+    <!-- الشاشة 6: الكلام والرومانسية -->
+    <div class="screen" id="screen6">
+        <h2>رسالة من قلبي 💌</h2>
+        <!-- اكتب كلامك هنا -->
+        <p>كل لحظة معاكي هي أجمل لحظة في حياتي، ربنا يخليكي ليا وما يحرميش منك أبداً ❤️</p>
+        <div class="btn-container">
+            <button class="btn btn-secondary" onclick="goToScreen(5)">رجوع</button>
+            <button class="btn" onclick="goToScreen(1)">من الأول 🔄</button>
+        </div>
+    </div>
+
+    <script>
+        function showHeart() {
+            document.getElementById('logoBtn').style.display = 'none';
+            document.getElementById('heartIcon').style.display = 'block';
+            document.getElementById('startBtn').style.display = 'inline-block';
+        }
+
+        function goToScreen(screenNumber) {
+            const screens = document.querySelectorAll('.screen');
+            screens.forEach(screen => screen.classList.remove('active'));
+            document.getElementById('screen' + screenNumber).classList.add('active');
+        }
+    </script>
+</body>
+</html>
