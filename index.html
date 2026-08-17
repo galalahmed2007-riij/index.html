@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>رحلتنا سوا ❤️</title>
-    <!-- Google Fonts: Aref Ruqaa for Ruqaa calligraphy, Tajawal & Cairo for smooth modern arabic font -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
@@ -39,6 +39,7 @@
             color: #ffffff;
             overflow-x: hidden;
             position: relative;
+            padding: 20px 0;
         }
 
         /* Floating Background Particles */
@@ -149,7 +150,7 @@
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.18);
             border-radius: 28px;
-            padding: 35px 25px;
+            padding: 30px 20px;
             text-align: center;
             width: 100%;
             box-shadow: 0 25px 50px rgba(0,0,0,0.6), inset 0 0 15px rgba(255,255,255,0.05);
@@ -161,7 +162,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 480px;
+            min-height: 520px;
         }
 
         @keyframes fadeIn {
@@ -198,26 +199,49 @@
         .stylish-text {
             font-family: 'Tajawal', sans-serif;
             font-weight: 700;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: #ffffff;
-            line-height: 1.8;
-            margin-bottom: 20px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        /* Image Containers */
+        .photo-card {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5), 0 0 15px rgba(255, 42, 109, 0.3);
+            margin: 15px 0;
+            max-height: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 18px;
         }
 
         .dates-box {
             background: rgba(0, 0, 0, 0.25);
             border: 1px solid rgba(255, 215, 0, 0.3);
             border-radius: 20px;
-            padding: 20px 15px;
-            margin: 20px 0;
+            padding: 15px;
+            margin: 15px 0;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .date-item {
             font-family: 'Cairo', sans-serif;
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: #ffffff;
             display: flex;
@@ -228,20 +252,20 @@
 
         .date-number {
             color: #ffd700;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
             direction: ltr;
         }
 
         .highlight-date {
             font-family: 'Aref Ruqaa', serif;
-            font-size: 2.1rem;
+            font-size: 2rem;
             color: #ffd700;
             background: rgba(255, 42, 109, 0.2);
-            padding: 15px;
+            padding: 12px;
             border-radius: 18px;
             border: 1px dashed rgba(255, 215, 0, 0.5);
-            margin: 25px 0;
+            margin: 15px 0;
             text-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
         }
 
@@ -308,11 +332,10 @@
             <div class="envelope-hint">اضغطي هنا علشان تفتحي الظرف ✨</div>
         </div>
 
-        <!-- STEP 1: DATES PAGE (8/10/2007 & 10/10/2006) -->
+        <!-- STEP 1: DATES & MEMORIES -->
         <div class="card-page" id="page1">
             <div>
                 <div class="ruqaa-title">تواريخ محفورة في القلب 💫</div>
-                <p class="stylish-text">كل حكاية حلوة وليها بداية مميزة... وتواريخنا هي أجمل حكايات العمر ❤️</p>
                 
                 <div class="dates-box">
                     <div class="date-item">
@@ -324,22 +347,29 @@
                         <span class="date-number">8 / 10 / 2007</span>
                     </div>
                 </div>
+
+                <div class="photo-card">
+                    <img src="https://i.ibb.co/L50F69W/photo1.jpg" alt="ذكرياتنا الجميلة">
+                </div>
             </div>
 
             <button class="btn-action" onclick="nextPage(2)">يلا نروّح للخطوة الجاية 👈</button>
         </div>
 
-        <!-- STEP 2: SPECIAL DATE (يوم ٣ شهر ١) -->
+        <!-- STEP 2: SPECIAL DATE & FLOWERS -->
         <div class="card-page" id="page2">
             <div>
                 <div class="ruqaa-title">يوم مش زي أي يوم 🌹</div>
-                <p class="stylish-text">اليوم اللي علّم في حياتنا وغير كل حاجة للـ أجمَل...</p>
                 
                 <div class="highlight-date">
                     🗓️ يوم ٣ شهر ١
                 </div>
 
-                <p class="stylish-text" style="font-size: 1.15rem; color: #ffb3c6;">
+                <div class="photo-card" style="max-height: 250px;">
+                    <img src="https://i.ibb.co/30Z3SgV/photo2.jpg" alt="وردتنا الجميلة">
+                </div>
+
+                <p class="stylish-text" style="font-size: 1.1rem; color: #ffb3c6; margin-top: 5px;">
                     اليوم ده بالذات له مكانة تانية خالص جوة قلبي ❤️
                 </p>
             </div>
@@ -354,7 +384,7 @@
                     مستعدة نكمل الرحلة مع بعض؟ 💍✨
                 </div>
 
-                <p class="stylish-text" style="color: #ffb3c6; margin-top: 10px;">
+                <p class="stylish-text" style="color: #ffb3c6; margin-top: 15px;">
                     يدي في يدك وعُمرنا كله سوا إن شاء الله ❤️
                 </p>
             </div>
@@ -363,7 +393,7 @@
                 <button class="btn-action" id="completionBtn" onclick="triggerHeartsAndLove()">يلا كملي 💖</button>
 
                 <!-- FINAL LOVE MESSAGE -->
-                <div id="finalLoveMessage" style="display: none; margin-top: 25px; animation: fadeIn 1s ease forwards;">
+                <div id="finalLoveMessage" style="display: none; margin-top: 20px; animation: fadeIn 1s ease forwards;">
                     <div class="ruqaa-love">بحبك ❤️</div>
                 </div>
             </div>
